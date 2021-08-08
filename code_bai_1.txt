@@ -1,0 +1,24 @@
+#import module
+from RPi import GPIO 
+from time import sleep
+
+#setup pins
+GPIO.setmode(GPIO.BOARD)
+led1 = 12
+led2 = 16
+btn = 11
+GPIO.setup(led1, GPIO.OUT)
+GPIO.setup(led2, GPIO.OUT)
+GPIO.setup(btn, GPIO.IN)
+
+
+#while loop
+while True:
+  if( GPIO.input(11) == False):
+    GPIO.output(led1, True) 
+    GPIO.output(led2, True) 
+    sleep(1) 
+    GPIO.output(led1, False) 
+    GPIO.output(led2, False) 
+    sleep(1)
+ 
